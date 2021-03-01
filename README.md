@@ -9,6 +9,10 @@ php artisan make:factory ReplyFactory
 ````
 tinker :
 
-`
-$threads->each(function($threads){Reply::factory()->count(10)->create(['thread_id' => $thread->id]);});
-`
+```
+
+$threads = Thread::factory()->count(50)->create();
+
+$threads->each(function($thread){Reply::factory()->count(10)->create(['thread_id' => $thread->id]);});
+
+```
