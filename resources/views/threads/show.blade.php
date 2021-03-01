@@ -14,6 +14,20 @@
                         <div class="body">{{$thread->body}}</div>
                     </article>
                 </div>
+
+                <div class="p-10 bg-white border-b border-gray-200">
+                    @foreach($thread->replies as $reply)
+                        <article class="mt-4">
+                            <div>
+                                <span><a class="text-blue-600" href="#">{{$reply->owner->name}}</a></span> said
+                                <span>{{$reply->created_at->diffForHumans()}}...</span>
+                            </div>
+                            <hr>
+                            <b>{{$reply->title}}</b>
+                            <div class="body">{{$reply->body}}</div>
+                        </article>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
