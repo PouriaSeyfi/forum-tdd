@@ -2,13 +2,14 @@
 ## About Forum TDD
 
 ````
-php artisan make:factory ThreadFactory
+composer require laravel/breeze --dev
 
-php artisan make:factory ReplyFactory
+sail art breeze:install
+
+npm install
+
+npm run dev
+
+sail art migrate
 
 ````
-tinker :
-
-`
-$threads->each(function($threads){Reply::factory()->count(10)->create(['thread_id' => $thread->id]);});
-`

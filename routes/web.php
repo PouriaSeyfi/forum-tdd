@@ -26,3 +26,4 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 Route::get('/threads', [ThreadsController::class, 'index']);
+Route::get('/threads/{thread}', [ThreadsController::class, 'show']);
